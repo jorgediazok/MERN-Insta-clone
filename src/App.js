@@ -52,7 +52,6 @@ function App() {
    const unsubscribe = auth.onAuthStateChanged((authUser)=>{
       if(authUser){
         //user has logged in
-        console.log(authUser)
         setUser(authUser)    
       }else{
         //user has logged out
@@ -68,7 +67,7 @@ function App() {
 
 
   useEffect(()=>{
-    db.collection("posts").onSnapshot(snapshot=>{
+    db.collection("posts").orderBy("timestamp", "desc").onSnapshot(snapshot=>{
       setPosts(snapshot.docs.map(doc => ({
         id: doc.id,
         post: doc.data()
@@ -96,7 +95,10 @@ function App() {
   return (
     <div className="app">
 
-      <ImageUpload />
+      {user?.displayName ? (
+      <ImageUpload username={user.displayName}/>
+
+      ) : <h3>Please Login to Upload</h3>}
 
       <Modal open={open} onClose={() => setOpen(false)}>
         <div style={modalStyle} className={classes.paper}>
