@@ -50,3 +50,14 @@
   border-top: 1px solid lightgray;
   color: #6082a3;
 }
+
+.post__icons {
+  display: flex;
+  padding-left: 15px;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.post__icon {
+  margin-right: 10px;
+}

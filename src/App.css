@@ -22,10 +22,17 @@
   padding: 20px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .app__postsRight {
   margin-left: 20px;
+}
+
+.app__message {
+  text-align: center;
+  color: #6082a3;
+  font-size: 1.5rem;
 }
 
 .app__headerImage {

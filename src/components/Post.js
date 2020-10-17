@@ -1,6 +1,9 @@
 import React,{ useState, useEffect } from 'react'
 import firebase from "firebase"
 import Avatar from "@material-ui/core/Avatar"
+import FavoriteSharpIcon from "@material-ui/icons/FavoriteSharp"
+import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline"
+import SendIcon from "@material-ui/icons/Send"
 import { db } from "../firebase"
 import "../styles/Post.css"
 
@@ -40,7 +43,8 @@ function Post({imageUrl, postId, caption, username, user}) {
     });
     setComment("")
   }
-  
+
+    
   return (
     <div className="post">
 
@@ -50,6 +54,12 @@ function Post({imageUrl, postId, caption, username, user}) {
       </div>      
 
     <img className="post__image" src={imageUrl} alt="react"/>
+
+    <div className="post__icons">
+      <FavoriteSharpIcon className="post__icon"/>
+      <ChatBubbleOutlineIcon className="post__icon"/>
+      <SendIcon className="post__icon"/>
+    </div>
 
     <h4 className="post__text"><strong>{username} </strong>{caption}</h4>
 
