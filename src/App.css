@@ -44,3 +44,10 @@
   flex-direction: column;
   text-align: center;
 }
+
+@media only screen and (max-width: 667px) {
+  .app__input {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+}
